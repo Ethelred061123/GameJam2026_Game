@@ -6,10 +6,12 @@ public class PlayerControl : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
     private Animator anim;
+
     public float baseMoveSpeed = 3f;
     [HideInInspector]
     public float moveSpeed;
     Coroutine speedRoutine;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_revive : MonoBehaviour
 {
+    //玩家复活次数管理
     public int fuhuocount = 0;
     public void AddReviveCount(int amount =1)
     {

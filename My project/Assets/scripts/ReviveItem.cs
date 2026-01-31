@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReviveItem : MonoBehaviour
 {
+    //复活道具
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("碰到了：" + other.name);

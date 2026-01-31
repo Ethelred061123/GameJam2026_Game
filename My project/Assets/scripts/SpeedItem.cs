@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpeedItem : MonoBehaviour
 {
+    //¼ÓËÙ
     public float speedMultiplier = 1.5f;
     public float duration = 3f;
 

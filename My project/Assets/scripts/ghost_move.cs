@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ghost_move : MonoBehaviour
 {
+    //怪物追踪逻辑脚本
     public float speed = 2f;
     public float chaseDistance = 5f;
     public Transform pointA;
@@ -12,6 +13,9 @@ public class ghost_move : MonoBehaviour
     public float loseDistance = 7f;   
 
     private bool isChasing = false;
+    public bool canChase = true;
+    private NewBehaviourScript playerInvis;
+
 
 
     private Transform currentTarget;
@@ -21,9 +25,14 @@ public class ghost_move : MonoBehaviour
     {
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         if (p != null)
+        {
             player = p.transform;
+            playerInvis = p.GetComponent<NewBehaviourScript>();
+        }
         else
+        {
             Debug.LogError("没找到 Tag=Player 的物体");
+        }
 
         if (pointA != null && pointB != null)
             currentTarget = pointA;
@@ -33,19 +42,31 @@ public class ghost_move : MonoBehaviour
 
     void Update()
     {
+        if (playerInvis != null && playerInvis.isInvisible)
+        {
+            isChasing = false;
+            return; 
+        }
+
+        if (!canChase)
+        {
+            isChasing = false;
+        }
+
 
         if (player == null || currentTarget == null) return;
 
         float distanceToPlayer =
             Vector2.Distance(transform.position, player.position);
 
-        
-        if (!isChasing && distanceToPlayer <= viewDistance)
+
+        if (canChase && !isChasing && distanceToPlayer <= viewDistance)
         {
             isChasing = true;
         }
 
-       
+
+
         if (isChasing)
         {
             Move2D(player.position);
@@ -86,5 +107,19 @@ public class ghost_move : MonoBehaviour
                 1
             );
         }
+    }
+    public void DisableChase(float time)
+    {
+        StartCoroutine(DisableChaseRoutine(time));
+    }
+
+    IEnumerator DisableChaseRoutine(float time)
+    {
+        canChase = false;
+        isChasing = false;
+
+        yield return new WaitForSeconds(time);
+
+        canChase = true;
     }
 }

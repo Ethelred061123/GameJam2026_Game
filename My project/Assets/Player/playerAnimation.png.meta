@@ -181,8 +181,8 @@ TextureImporter:
       name: playerAnimation_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 5
+        x: 60
+        y: 55
         width: 16
         height: 41
       alignment: 0
@@ -202,7 +202,7 @@ TextureImporter:
       name: playerAnimation_3
       rect:
         serializedVersion: 2
-        x: 47
+        x: 17
         y: 5
         width: 16
         height: 41
@@ -223,7 +223,7 @@ TextureImporter:
       name: playerAnimation_4
       rect:
         serializedVersion: 2
-        x: 74
+        x: 47
         y: 5
         width: 16
         height: 41
@@ -244,7 +244,7 @@ TextureImporter:
       name: playerAnimation_5
       rect:
         serializedVersion: 2
-        x: 95
+        x: 74
         y: 5
         width: 16
         height: 41
@@ -257,6 +257,27 @@ TextureImporter:
       bones: []
       spriteID: 4e5de60e7d30d2e4498cd33cb7ea7a00
       internalID: -648265684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 5
+        width: 16
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c4cbf6175a5484cb283dfbcffe5628
+      internalID: -824666828
       vertices: []
       indices: 
       edges: []
@@ -278,6 +299,7 @@ TextureImporter:
       playerAnimation_3: 1960825336
       playerAnimation_4: -1410886910
       playerAnimation_5: -648265684
+      playerAnimation_6: -824666828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
